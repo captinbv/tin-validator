@@ -22,6 +22,10 @@ This allows applications to validate a TIN in the browser while applying the sam
 
 Development and maintenance of this project is supported by **Captin B.V.**, which contributes resources to help keep the project actively maintained and expand its support for additional countries.
 
+This project is provided under the Apache License 2.0. The software is
+provided on an "AS IS" basis, without warranties or conditions of any kind.
+See the LICENSE file for the full license terms.
+
 ## License
 
 This project builds upon the original Nodens2k work and is distributed under the **Apache License 2.0**.

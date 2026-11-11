@@ -14,7 +14,7 @@ name: Java CI with Maven
 permissions:
   contents: read
   checks: write
-  
+
 on:
   push:
   pull_request:
@@ -71,5 +71,10 @@ jobs:
           name: clover-coverage
           path: target/site/clover/
           if-no-files-found: warn
+
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: target/site/clover/clover.xml
 
       

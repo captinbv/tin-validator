@@ -73,8 +73,13 @@ jobs:
           if-no-files-found: warn
 
       - name: Code Coverage Summary Report
-        uses: irongut/CodeCoverageSummary@v1.3.0
+        uses: saschanowak/CloverCodeCoverageSummary@1.1.1
         with:
           filename: target/site/clover/clover.xml
+
+      - name: Add Code Coverage to Job Summary
+        run: |
+          cat code-coverage-summary.md >> $GITHUB_STEP_SUMMARY
+          cat code-coverage-details.md >> $GITHUB_STEP_SUMMARY
 
       

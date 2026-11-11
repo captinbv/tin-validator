@@ -42,7 +42,30 @@ jobs:
           node --version
           npm --version
         
-      - name: Build and test with Maven
-        run: mvn -B clean verify --file pom.xml
+      - name: Maven build
+        run: >
+          mvn
+          clean
+          clover:instrument
+          test
+          clover:aggregate
+          clover:clover
+
+      - name: Publish test results
+        if: always()
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          check_name: jUnit and Jest test results
+          files: |
+            **/TEST-*.xml
+            **/junit.xml
+
+      - name: Upload Clover coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clover-coverage
+          path: target/site/clover/
+          if-no-files-found: warn
 
       

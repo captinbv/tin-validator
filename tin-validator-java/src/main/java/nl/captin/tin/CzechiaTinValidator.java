@@ -6,8 +6,14 @@ import java.time.format.ResolverStyle;
 import java.util.regex.Pattern;
 import org.jetbrains.annotations.Contract;
 
+/**
+ * The type Czechia tin validator.
+ */
 public final class CzechiaTinValidator extends AbstractCountryTinValidator {
 
+    /**
+     * The constant INSTANCE.
+     */
     public static final CountryTinValidator INSTANCE = new CzechiaTinValidator();
 
     private static final Pattern TIN_REGEX = Pattern.compile("^[0-9]{9,10}$");

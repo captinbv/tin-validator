@@ -5,8 +5,14 @@ import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
 import java.util.regex.Pattern;
 
+/**
+ * The type Denmark tin validator.
+ */
 public final class DenmarkTinValidator extends AbstractCountryTinValidator {
 
+    /**
+     * The constant INSTANCE.
+     */
     public static final CountryTinValidator INSTANCE = new DenmarkTinValidator();
 
     private static final Pattern TIN_REGEX = Pattern.compile("^[0-9]{10}$");

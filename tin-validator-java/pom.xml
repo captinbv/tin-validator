@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <artifactId>tin-validator-java</artifactId>
-    <version>0.1.0</version>
+    <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>nl.captin</groupId>
@@ -13,13 +11,17 @@
         <version>0.1.0</version>
     </parent>
 
-    <url>https://github.com/captinbv/tin-validator</url>
-    <name>Captin - Java TIN Validator - Jave module</name>
-    <description>TIN Validator provides Tax Identification Number (TIN) validation for both Java and JavaScript,
-        allowing the same validation rules to be used consistently across back-end and front-end applications. This
-        open-source project is currently supported by Captin B.V.
+    <artifactId>tin-validator-java</artifactId>
+    <version>0.1.0</version>
 
-        This is the Java version
+    <url>https://github.com/captinbv/tin-validator</url>
+    <name>Captin - Java TIN Validator - Java module</name>
+    <description>
+        TIN Validator provides Tax Identification Number (TIN) validation for both Java and JavaScript,
+        allowing the same validation rules to be used consistently across back-end and front-end applications.
+        This open-source project is currently supported by Captin B.V.
+
+        This is the Java version.
     </description>
 
     <licenses>
@@ -45,12 +47,8 @@
     </developers>
 
     <scm>
-        <connection>
-            scm:git:https://github.com/captinbv/tin-validator.git
-        </connection>
-        <developerConnection>
-            scm:git:ssh://git@github.com/captinbv/tin-validator.git
-        </developerConnection>
+        <connection>scm:git:https://github.com/captinbv/tin-validator.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/captinbv/tin-validator.git</developerConnection>
         <url>https://github.com/captinbv/tin-validator</url>
     </scm>
 
@@ -78,6 +76,7 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -93,37 +92,7 @@
                 <version>3.2.5</version>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.3.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- Generate javadoc.jar -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.11.3</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
-
-
 
 </project>

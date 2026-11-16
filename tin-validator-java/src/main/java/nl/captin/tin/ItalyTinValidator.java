@@ -4,8 +4,14 @@ import java.util.regex.Pattern;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * The type Italy tin validator.
+ */
 public final class ItalyTinValidator extends AbstractCountryTinValidator {
 
+    /**
+     * The constant INSTANCE.
+     */
     public static final CountryTinValidator INSTANCE = new ItalyTinValidator();
 
     private static final Pattern CODE_REGEX = Pattern.compile("^[A-Z]{6}[0-9]{2}[ABCDEHLMPRST][0-9]{2}[A-Z][0-9]{3}[A-Z]$");

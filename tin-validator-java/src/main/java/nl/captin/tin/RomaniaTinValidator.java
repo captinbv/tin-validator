@@ -3,8 +3,14 @@ package nl.captin.tin;
 import java.util.regex.Pattern;
 import org.jetbrains.annotations.Contract;
 
+/**
+ * The type Romania tin validator.
+ */
 public final class RomaniaTinValidator extends AbstractCountryTinValidator {
 
+    /**
+     * The constant INSTANCE.
+     */
     public static final CountryTinValidator INSTANCE = new RomaniaTinValidator();
 
     private static final Pattern CNP_REGEX = Pattern.compile("^[0-9]{13}$");

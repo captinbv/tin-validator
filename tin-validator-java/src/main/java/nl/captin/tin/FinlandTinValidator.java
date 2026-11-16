@@ -5,8 +5,14 @@ import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
 import java.util.regex.Pattern;
 
+/**
+ * The type Finland tin validator.
+ */
 public final class FinlandTinValidator extends AbstractCountryTinValidator {
 
+    /**
+     * The constant INSTANCE.
+     */
     public static final CountryTinValidator INSTANCE = new FinlandTinValidator();
 
     private static final Pattern TIN_REGEX = Pattern.compile("^[0-9]{6}[A+-][0-9]{3}[0-9A-Z]$");

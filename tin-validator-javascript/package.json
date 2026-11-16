@@ -1,11 +1,15 @@
 {
-  "name": "@captin-nl/tin-validator",
-  "version": "1.0.0",
+  "name": "@captinbv/tin-validator",
+  "version": "0.1.0",
   "description": "TIN validator javascript",
+  "author": "Captin BV",
+  "license": "Apache-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc",

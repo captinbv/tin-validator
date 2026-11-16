@@ -11,6 +11,9 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.UnmodifiableView;
 
+/**
+ * The type Abstract country tin validator.
+ */
 public abstract class AbstractCountryTinValidator implements CountryTinValidator {
 
   private static final Pattern INVALID_CHARS = Pattern.compile("[^0-9A-Za-z]+");
@@ -19,10 +22,21 @@ public abstract class AbstractCountryTinValidator implements CountryTinValidator
 
   private final Set<String> countries;
 
+  /**
+   * Instantiates a new Abstract country tin validator.
+   *
+   * @param countries the countries
+   */
   protected AbstractCountryTinValidator(@NotNull String... countries) {
     this(INVALID_CHARS, countries);
   }
 
+  /**
+   * Instantiates a new Abstract country tin validator.
+   *
+   * @param invalidChars the invalid chars
+   * @param countries    the countries
+   */
   protected AbstractCountryTinValidator(Pattern invalidChars, @NotNull String... countries) {
     assert countries.length > 0 : "No languages supported?";
     this.invalidChars = invalidChars;
@@ -67,7 +81,7 @@ public abstract class AbstractCountryTinValidator implements CountryTinValidator
    * <p>This optional country code is usually present in TIN numbers of the European Union, when
    * used outside their origin countries.
    *
-   * @param tin TIN number to sanitise
+   * @param tin         TIN number to sanitise
    * @param countryCode Country code to remove from the TIN number if present
    * @return Sanitised TIN number
    */

@@ -7,7 +7,138 @@
     <groupId>nl.captin</groupId>
     <artifactId>tin-validator</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
+
+    <url>https://github.com/captinbv/tin-validator</url>
+    <name>Captin - Java TIN Validator</name>
+    <description>TIN Validator provides Tax Identification Number (TIN) validation for both Java and JavaScript,
+        allowing the same validation rules to be used consistently across back-end and front-end applications. This
+        open-source project is currently supported by Captin B.V.
+    </description>
+
+    <properties>
+        <clover-maven-plugin.version>4.5.2</clover-maven-plugin.version>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>renzo.slijp</id>
+            <name>Renzo Slijp</name>
+            <organization>Captin B.V.</organization>
+            <email>renzo.slijp@captin.nl</email>
+        </developer>
+        <developer>
+            <id>swati.kumari</id>
+            <name>Swati Kumari</name>
+            <organization>Captin B.V.</organization>
+            <email>swati.kumari@captin.nl</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>
+            scm:git:https://github.com/captinbv/tin-validator.git
+        </connection>
+        <developerConnection>
+            scm:git:ssh://git@github.com/captinbv/tin-validator.git
+        </developerConnection>
+        <url>https://github.com/captinbv/tin-validator</url>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openclover</groupId>
+                <artifactId>clover-maven-plugin</artifactId>
+                <version>${clover-maven-plugin.version}</version>
+                <configuration>
+                    <includesTestSourceRoots>false</includesTestSourceRoots>
+                    <excludes>
+                        <exclude>**/*Config.java</exclude>
+                        <exclude>**/*Configuration.java</exclude>
+                        <exclude>**/*Application.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <!-- Generate sources.jar -->
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>release-mvn</id>
+            <build>
+                <plugins>
+                    <!-- Sign artifacts -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.8</version>
+
+                        <configuration>
+                            <keyname>${gpg.keyname}</keyname>
+                            <passphrase>${gpg.passphrase}</passphrase>
+                        </configuration>
+
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Publish to Maven Central -->
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.12.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <excludeArtifacts>
+<!--                                <excludeArtifact>tin-validator</excludeArtifact>-->
+                                <excludeArtifact>tin-validator-javascript</excludeArtifact>
+                            </excludeArtifacts>
+                        </configuration>
+                    </plugin>
+                </plugins>
+
+            </build>
+        </profile>
+    </profiles>
+
+    <properties>
+        <clover-maven-plugin.version>4.5.2</clover-maven-plugin.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openclover</groupId>
+                <artifactId>clover-maven-plugin</artifactId>
+                <version>${clover-maven-plugin.version}</version>
+                <configuration>
+                    <includesTestSourceRoots>false</includesTestSourceRoots>
+                    <excludes>
+                        <exclude>**/*Config.java</exclude>
+                        <exclude>**/*Configuration.java</exclude>
+                        <exclude>**/*Application.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <properties>
         <clover-maven-plugin.version>4.5.2</clover-maven-plugin.version>

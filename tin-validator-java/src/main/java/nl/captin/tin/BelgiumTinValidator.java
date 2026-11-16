@@ -3,8 +3,14 @@ package nl.captin.tin;
 import java.util.regex.Pattern;
 import org.jetbrains.annotations.Contract;
 
+/**
+ * The type Belgium tin validator.
+ */
 public final class BelgiumTinValidator extends AbstractCountryTinValidator {
 
+    /**
+     * The constant INSTANCE.
+     */
     public static final CountryTinValidator INSTANCE = new BelgiumTinValidator();
 
     private static final Pattern TIN_REGEX = Pattern.compile("^[0-9]{11}$");

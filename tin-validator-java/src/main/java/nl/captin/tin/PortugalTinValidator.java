@@ -3,8 +3,14 @@ package nl.captin.tin;
 import java.util.regex.Pattern;
 import org.jetbrains.annotations.Contract;
 
+/**
+ * The type Portugal tin validator.
+ */
 public final class PortugalTinValidator extends AbstractCountryTinValidator {
 
+    /**
+     * The constant INSTANCE.
+     */
     public static final CountryTinValidator INSTANCE = new PortugalTinValidator();
 
     private static final Pattern TIN_REGEX = Pattern.compile("^(:?[123568][0-9]{8})|(:?(:?45|7[0124579]|9[0189])[0-9]{7})$");

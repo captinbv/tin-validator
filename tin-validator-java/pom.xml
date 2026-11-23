@@ -8,11 +8,11 @@
     <parent>
         <groupId>nl.captin</groupId>
         <artifactId>tin-validator</artifactId>
-        <version>0.1.0</version>
+        <version>0.2.1</version>
     </parent>
 
     <artifactId>tin-validator-java</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.1</version>
 
     <url>https://github.com/captinbv/tin-validator</url>
     <name>Captin - Java TIN Validator - Java module</name>

@@ -1,6 +1,6 @@
 {
   "name": "@captinbv/tin-validator",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "TIN validator javascript",
   "author": "Captin BV",
   "license": "Apache-2.0",

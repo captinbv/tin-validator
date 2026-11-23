@@ -71,7 +71,10 @@
                     </excludes>
                 </configuration>
             </plugin>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             <!-- Generate sources.jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -102,6 +105,36 @@
                 </executions>
             </plugin>
 
+<<<<<<< Updated upstream
+=======
+            <!-- Sign artifacts -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.8</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Publish to Maven Central -->
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.12.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                </configuration>
+            </plugin>
+
+>>>>>>> Stashed changes
         </plugins>
     </build>
 

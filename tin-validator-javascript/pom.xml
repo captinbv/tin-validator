@@ -83,36 +83,37 @@
 
     </build>
 
-    <profiles>
-        <profile>
-            <id>release-mvn</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.6.2</version>
-                        <executions>
-                            <execution>
-                                <id>publish-npm</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <workingDirectory>${maven.multiModuleProjectDirectory}/tin-validator-javascript</workingDirectory>
-                                    <executable>npm</executable>
-                                    <arguments>
-                                        <argument>publish</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>release-mvn</id>-->
+<!--            <build>-->
+<!--                <plugins>-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.codehaus.mojo</groupId>-->
+<!--                        <artifactId>exec-maven-plugin</artifactId>-->
+<!--                        <version>3.6.2</version>-->
+<!--                        <executions>-->
+<!--                            <execution>-->
+<!--                                <id>publish-npm</id>-->
+<!--                                <phase>deploy</phase>-->
+<!--                                <goals>-->
+<!--                                    <goal>exec</goal>-->
+<!--                                </goals>-->
+<!--                                <configuration>-->
+<!--                                    <workingDirectory>${maven.multiModuleProjectDirectory}/tin-validator-javascript</workingDirectory>-->
+<!--                                    <executable>npm</executable>-->
+<!--                                    <arguments>-->
+<!--                                        <argument>run</argument>-->
+<!--                                        <argument>publish</argument>-->
+<!--                                    </arguments>-->
+<!--                                </configuration>-->
+<!--                            </execution>-->
+<!--                        </executions>-->
+<!--                    </plugin>-->
+<!--                </plugins>-->
+<!--            </build>-->
+<!--        </profile>-->
+<!--    </profiles>-->
 
 
 </project>

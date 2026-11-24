@@ -21,37 +21,27 @@ class NetherlandsTinValidatorIntegrationTest {
 
     @Test
     void shouldValidateNetherlandsTinThroughFactory() {
-        assertTrue(
-                validator.isValid("123456782", TinType.ANY)
-        );
+        assertTrue(validator.isValid("123456782", TinType.ANY));
     }
 
     @Test
     void shouldRejectInvalidNetherlandsTinThroughFactory() {
-        assertFalse(
-                validator.isValid("123456781", TinType.ANY)
-        );
+        assertFalse(validator.isValid("123456781", TinType.ANY));
     }
 
     @Test
     void shouldRejectNullTinThroughFactory() {
-        assertFalse(
-                validator.isValid((String) null, TinType.ANY)
-        );
+        assertFalse(validator.isValid((String) null, TinType.ANY));
     }
 
     @Test
     void shouldRejectEmptyTinThroughFactory() {
-        assertFalse(
-                validator.isValid("", TinType.ANY)
-        );
+        assertFalse(validator.isValid("", TinType.ANY));
     }
 
     @Test
     void shouldContainNetherlandsCountryMapping() {
-        assertTrue(
-                factory.getAllMappings().containsKey("NL")
-        );
+        assertTrue(factory.getAllMappings().containsKey("NL"));
     }
 
     @Test
@@ -63,4 +53,5 @@ class NetherlandsTinValidatorIntegrationTest {
 
         assertNull(customFactory.getValidatorFor("XX"));
     }
+
 }

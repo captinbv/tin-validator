@@ -8,7 +8,7 @@ import org.jetbrains.annotations.UnmodifiableView;
 /**
  * Contract definition for all country-specific TIN validators.
  *
- * <p>For global validation, refer to {@link TinValidator}.
+ * <p>For global validation, refer to {@link DefaultTinValidatorFactory}.
  */
 public interface CountryTinValidator {
 
